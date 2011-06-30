@@ -136,7 +136,7 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'
 
 if has("gui_running")
     set guioptions-=T
-    set guioptions-=m
+    " set guioptions-=m
     set linespace=6
     set columns=170 lines=30
     set guioptions-=T
