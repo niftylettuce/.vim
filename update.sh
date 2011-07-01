@@ -133,7 +133,12 @@ echo "Installing Command-T"
 get_repo "wincent" "Command-T"
 echo "Building Commant-T"
 cd $DOTVIM/bundle/Command-T
-rake make
+if which rvm
+then
+    rvm system rake make
+else
+    rake make
+fi
 
 cd $DOTVIM/autoload
 echo "Fetching latest pathogen.vim"
