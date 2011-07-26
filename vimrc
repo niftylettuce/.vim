@@ -181,6 +181,7 @@ let g:CommandTMaxHeight=20
 " Ack
 set grepprg=ack
 nnoremap <leader>a :Ack<space>
+let g:ackhighlight=1
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " CoffeeScript
@@ -204,7 +205,7 @@ au FileType ruby setlocal ts=2 sts=2 sw=2 expandtab foldmethod=syntax
 au FileType python set noexpandtab
 
 " JavaScript
-au FileType javascript setlocal ts=4 sts=4 sw=4
+au FileType javascript setlocal ts=2 sts=2 sw=2
 au BufRead,BufNewFile *.json set ft=json
 
 "" STATUS LINE
