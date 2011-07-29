@@ -186,6 +186,7 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 
 " CoffeeScript
 let coffee_compile_on_save = 1
+au FileType coffee set expandtab tabstop=2 shiftwidth=2
 
 "" LANGUAGE SPECIFIC
 
