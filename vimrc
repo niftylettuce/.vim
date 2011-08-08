@@ -56,6 +56,7 @@ set linebreak                       " this will not break whole words while wrap
 set showbreak=…
 set cursorline                      " highlight current line
 set list listchars=tab:\ \ ,trail:· " show · for trailing space, \ \ for trailing tab
+set spelllang=en,es                 " set spell check language
 
 syntax enable                       " enable syntax highlighting
 
@@ -124,6 +125,13 @@ nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 " allow saving when you forgot sudo
 cmap w!! w !sudo tee % >/dev/null
+" turn on spell checking
+map <leader>spl :setlocal spell!<cr>
+" spell checking shortcuts
+map <leader>sn ]s
+map <leader>sp [s
+map <leader>sa zg
+map <leader>s? z=
 
 "" ADDITIONAL AUTOCOMMANDS
 
