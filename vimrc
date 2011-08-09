@@ -71,9 +71,9 @@ endif
 " COLOR SCHEME
 set t_Co=256
 set background=dark
-colorscheme solarized
+colorscheme molokai
 if has("gui_running")
-    colorscheme solarized
+    colorscheme molokai
 endif
 
 " FOLDING
