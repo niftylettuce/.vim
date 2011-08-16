@@ -71,9 +71,9 @@ endif
 " COLOR SCHEME
 set t_Co=256
 set background=dark
-colorscheme molokai
+colorscheme ambient
 if has("gui_running")
-    colorscheme molokai
+    colorscheme ambient
 endif
 
 " FOLDING
@@ -139,6 +139,8 @@ map <leader>s? z=
 au FocusLost,BufLeave,WinLeave,TabLeave * silent! up
 " open in last edit place
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+au QuickFixCmdPost *grep* cwindow
+
 
 "" ADDITIONAL GUI SETTINGS
 
@@ -190,7 +192,7 @@ let g:CommandTMaxHeight=20
 set grepprg=ack
 nnoremap <leader>a :Ack<space>
 let g:ackhighlight=1
-let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+let g:ackprg="ack-grep -H --nocolor --nogroup --column --ignore-dir=node_modules -G '^((?!min\.).)*$'"
 
 " CoffeeScript
 let coffee_compile_on_save = 1
