@@ -192,7 +192,7 @@ let g:CommandTMaxHeight=20
 set grepprg=ack
 nnoremap <leader>a :Ack<space>
 let g:ackhighlight=1
-let g:ackprg="ack-grep -H --nocolor --nogroup --column --ignore-dir=node_modules -G '^((?!min\.).)*$'"
+let g:ackprg="ack-grep -H --type-set jade=.jade --type-set stylus=.styl --type-set coffee=.coffee --nocolor --nogroup --column --ignore-dir=node_modules -G '^((?!min\.).)*$'"
 
 " CoffeeScript
 let coffee_compile_on_save = 1
