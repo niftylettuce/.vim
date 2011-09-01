@@ -71,7 +71,7 @@ endif
 " COLOR SCHEME
 set t_Co=256
 set background=dark
-colorscheme ambient
+colorscheme solarized
 if has("gui_running")
     colorscheme ambient
 endif
