@@ -57,6 +57,8 @@ set showbreak=…
 set cursorline                      " highlight current line
 set list listchars=tab:\ \ ,trail:· " show · for trailing space, \ \ for trailing tab
 set spelllang=en,es                 " set spell check language
+set noeb vb t_vb=                   " disable audio and visual bells
+au GUIEnter * set vb t_vb=
 
 syntax enable                       " enable syntax highlighting
 
