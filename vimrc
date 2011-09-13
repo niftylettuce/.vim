@@ -197,7 +197,7 @@ let g:ackhighlight=1
 let g:ackprg="ack-grep -H --type-set jade=.jade --type-set stylus=.styl --type-set coffee=.coffee --nocolor --nogroup --column --ignore-dir=node_modules -G '^((?!min\.).)*$'"
 
 " CoffeeScript
-au FileType coffee set expandtab tabstop=2 shiftwidth=2
+au FileType coffee set expandtab tabstop=3 shiftwidth=3
 map <leader>cc :CoffeeCompile<cr>
 map <silent> <leader>cm :CoffeeMake<cr> <cr>
 
