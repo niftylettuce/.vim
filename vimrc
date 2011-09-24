@@ -150,7 +150,7 @@ if has("gui_running")
     set guioptions-=T
     " set guioptions-=m
     set linespace=6
-    set columns=170 lines=30
+    set columns=160 lines=20
     set guioptions-=T
 
     " crazy hack to get gvim to remove all scrollbars
@@ -160,7 +160,7 @@ if has("gui_running")
     if has("mac")
         set guifont=DejaVu\ Sans\ Mono\:h14
     else
-        set guifont=UbuntuBeta\ Mono\ 11
+        set guifont=Droid\ Sans\ Mono\ 9
     endif
 endif
 
