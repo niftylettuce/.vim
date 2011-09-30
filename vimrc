@@ -67,6 +67,8 @@ syntax enable                       " enable syntax highlighting
 if v:version >= 703
     set undofile
     set undodir=$HOME/.vim/.undo
+    set undolevels=1000
+    set undoreload=10000
     set colorcolumn=115          " show a right margin column
 endif
 
@@ -75,7 +77,7 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 if has("gui_running")
-    colorscheme ambient
+    colorscheme molokai
 endif
 
 " FOLDING
@@ -160,7 +162,7 @@ if has("gui_running")
     if has("mac")
         set guifont=DejaVu\ Sans\ Mono\:h14
     else
-        set guifont=UbuntuBeta\ Mono\ 11
+        set guifont=Ubuntu\ Mono\ 11
     endif
 endif
 
