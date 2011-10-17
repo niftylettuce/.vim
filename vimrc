@@ -77,7 +77,7 @@ set t_Co=256
 set background=dark
 colorscheme solarized
 if has("gui_running")
-    colorscheme molokai
+    colorscheme railscast
 endif
 
 " FOLDING
@@ -152,7 +152,7 @@ if has("gui_running")
     set guioptions-=T
     " set guioptions-=m
     set linespace=6
-    set columns=160 lines=20
+    set columns=160 lines=26
     set guioptions-=T
 
     " crazy hack to get gvim to remove all scrollbars
@@ -202,6 +202,7 @@ let g:ackprg="ack-grep -H --type-set jade=.jade --type-set stylus=.styl --type-s
 au FileType coffee set expandtab tabstop=3 shiftwidth=3
 map <leader>cc :CoffeeCompile<cr>
 map <silent> <leader>cm :CoffeeMake<cr> <cr>
+au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
 "" LANGUAGE SPECIFIC
 
