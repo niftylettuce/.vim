@@ -77,7 +77,7 @@ set t_Co=256
 colorscheme xoria256
 if has("gui_running")
     set background=dark
-    colorscheme railscast
+    colorscheme xoria256
 endif
 
 " FOLDING
