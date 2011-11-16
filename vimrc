@@ -80,6 +80,14 @@ if has("gui_running")
     colorscheme xoria256
 endif
 
+" Non-XTERM
+set ttimeoutlen=50
+if &term =~ "screen"
+  let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
+  let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
+  let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
+endif
+
 " FOLDING
 set foldenable                   " enable folding
 set foldmethod=marker            " detect triple-{ style fold markers
@@ -162,7 +170,7 @@ if has("gui_running")
     if has("mac")
         set guifont=DejaVu\ Sans\ Mono\:h14
     else
-        set guifont=Ubuntu\ Mono\ 11
+        set guifont=Ubuntu\ Mono\ 12
     endif
 endif
 
