@@ -43,9 +43,9 @@ set nobackup                        " prevent backups of files, since using vers
 set nowritebackup
 set noswapfile
 set directory=~/.vim/.swp,/tmp      " swap directory
-set shiftwidth=4                    " set tab width
-set softtabstop=4
-set tabstop=4
+set shiftwidth=3                    " set tab width
+set softtabstop=3
+set tabstop=3
 set smarttab
 set expandtab
 set autoindent                      " set automatic code indentation
@@ -158,7 +158,7 @@ au QuickFixCmdPost *grep* cwindow
 
 if has("gui_running")
     set guioptions-=T
-    " set guioptions-=m
+    set guioptions-=m
     set linespace=6
     set columns=160 lines=26
     set guioptions-=T
@@ -214,23 +214,18 @@ au BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
 "" LANGUAGE SPECIFIC
 
-" CSS
-au FileType css set expandtab tabstop=2 shiftwidth=2
-
 " HTML
 au FileType html,xhtml set formatoptions+=tl
 au FileType html,xhtml set foldmethod=indent smartindent
-au FileType html,xhtml set expandtab tabstop=3 shiftwidth=3
 au FileType html,php,xhtml,jsp,ejs let b:delimitMate_matchpairs = "(:),[:],{:}"
 
 " Ruby
-au FileType ruby setlocal ts=2 sts=2 sw=2 expandtab foldmethod=syntax
+au FileType ruby setlocal foldmethod=syntax
 
 " Python
 au FileType python set noexpandtab
 
 " JavaScript
-au FileType javascript setlocal ts=2 sts=2 sw=2
 au BufRead,BufNewFile *.json set ft=json
 
 "" STATUS LINE
