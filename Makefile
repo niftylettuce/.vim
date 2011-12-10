@@ -1,5 +1,8 @@
 all:install
 
 install:
-	./install.sh
-	./update.sh
+	@bin/install.sh
+	@bin/update.sh
+
+update:
+	@bin/update.sh
