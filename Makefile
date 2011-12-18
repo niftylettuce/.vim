@@ -1,4 +1,4 @@
-all:install
+all:update
 
 install:
 	@bin/install.sh

@@ -2,12 +2,6 @@
 
 DOTVIM="$HOME/.vim"
 
-if [ ! -e `which git` ]
-then
-  echo "You need git. On Ubuntu, install with sudo apt-get install git-core"
-  exit 0
-fi
-
 if [ ! -d $DOTVIM ]
 then
   mkdir $DOTVIM
@@ -50,21 +44,15 @@ echo "Creating .vim folders if necessary"
 mkdir -p $DOTVIM/{autoload,bundle}
 cd $DOTVIM/bundle/
 
-tpope_repos=(git surround unimpaired abolish repeat markdown ragtag fugitive speeddating)
+tpope_repos=(git surround unimpaired repeat markdown ragtag fugitive speeddating)
 
 for r in ${tpope_repos[*]}; do
     repo="vim-$r"
     get_repo "tpope" $repo
 done
 
-echo "Installing NerdTree"
-get_repo "scrooloose" "nerdtree"
-
 echo "Installing TComment"
 get_repo "tomtom" "tcomment_vim"
-
-echo "Installing snipMate"
-get_repo "msanders" "snipmate.vim"
 
 echo "Installing xmledit"
 get_repo "sukima" "xmledit"
@@ -75,20 +63,11 @@ get_repo "altercation" "vim-colors-solarized"
 echo "Installing xoria256.vim"
 get_repo "guns" "xoria256.vim"
 
-echo "Installing vim-matchit"
-get_repo "mhz" "vim-matchit"
-
 echo "Installing ack.vim"
 get_repo "mileszs" "ack.vim"
 
 echo "Installing javascript.vim"
 get_repo "pangloss" "vim-javascript"
-
-echo "Installing haskell.vim"
-get_repo "vim-scripts" "haskell.vim"
-
-echo "Installing calendar-vim"
-get_repo "mattn" "calendar-vim"
 
 echo "Installing molokai.vim"
 get_repo "vim-scripts" "molokai"
@@ -99,17 +78,8 @@ get_repo "digitaltoad" "vim-jade"
 echo "Installing vim-stylus"
 get_repo "wavded" "vim-stylus"
 
-echo "Installing delimitMate"
-get_repo "Raimondi" "delimitMate"
-
-# echo "Installing neocomplcache"
-# get_repo "Shougo" "neocomplcache"
-
 echo "Installing supertab"
 get_repo "ervandew" "supertab"
-
-echo "Installing jshint"
-get_repo "walm" "jshint.vim"
 
 echo "Installing tabular"
 get_repo "godlygeek" "tabular"
@@ -119,9 +89,6 @@ get_repo "vim-scripts" "utl.vim"
 
 echo "Installing vim-orgmode"
 get_repo "jceb" "vim-orgmode"
-
-# echo "Installing VimOrganizer"
-# get_repo "hsitz" "VimOrganizer"
 
 echo "Installing coffee-script"
 get_repo "kchmck" "vim-coffee-script"
