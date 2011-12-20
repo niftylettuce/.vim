@@ -117,6 +117,9 @@ map <leader>. :b#<cr>
 " change directory to current buffer
 map <leader>cd :cd %:p:h<cr>
 
+" open file explorer
+map <leader>n :e.<cr>
+
 " swap implementations of ` and ' jump to prefer row and column jumping
 nnoremap ' `
 nnoremap ` '
