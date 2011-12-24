@@ -21,7 +21,7 @@
 	url = https://github.com/tpope/vim-ragtag
 [submodule "bundle/speeddating"]
 	path = bundle/speeddating
-	url = https://github.com/tpope/vim-speeddating
+	url = https://github.com/tpope/vim-speeddating.git
 [submodule "bundle/javascript"]
 	path = bundle/javascript
 	url = https://github.com/pangloss/vim-javascript
