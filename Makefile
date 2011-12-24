@@ -5,12 +5,12 @@ install:
 	@mv ~/.vimrc ~/.vimrc_bak || echo "There was no existing .vimrc, so no need to backup"
 	@mv ~/.gvimrc ~/.gvimrc_bak || echo "There was no existing .gvimrc, so no need to backup"
 	@ln -s ${vim}/vimrc ~/.vimrc
-	@make -s update
+	@git submodule update --init
+	@make -s command-t
 
 update:
 	@git submodule foreach git checkout master
 	@git submodule foreach git pull
-	# @git submodule update --init
 	@make -s command-t
 	@make -s pathogen
 
