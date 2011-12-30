@@ -71,7 +71,8 @@ if has("gui_running")
 
    set guifont=Ubuntu\ Mono\ 12    " gui font
    set background=dark
-   colorscheme xoria256            " gui theme
+   let g:molokai_original = 1
+   colorscheme molokai             " gui theme
 endif
 
 " FOLDING
