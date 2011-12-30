@@ -119,7 +119,7 @@ map <leader>. :b#<cr>
 map <leader>cd :cd %:p:h<cr>
 
 " open file explorer
-map <leader>n :e.<cr>
+map <leader>n :NERDTreeToggle<cr>
 
 " swap implementations of ` and ' jump to prefer row and column jumping
 nnoremap ' `
