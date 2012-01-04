@@ -73,3 +73,6 @@
 [submodule "bundle/nerdtree-execute"]
 	path = bundle/nerdtree-execute
 	url = https://github.com/ivalkeen/nerdtree-execute
+[submodule "bundle/irblack-grekko"]
+	path = bundle/irblack-grekko
+	url = https://github.com/grekko/vim-irblack-grekko.git

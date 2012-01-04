@@ -58,7 +58,7 @@ set noeb vb t_vb=                   " disable audio and visual bells
 
 set t_Co=256                        " use 256 colors
 set background=dark
-colorscheme xoria256                " terminal theme
+colorscheme ir_black                " terminal theme
 if has("gui_running")
    au GUIEnter * set vb t_vb=       " disable visual bell in gui
    set guioptions-=T                " remove gui toolbar
