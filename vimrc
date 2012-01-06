@@ -48,8 +48,6 @@ set autoindent                      " set automatic code indentation
 set hidden                          " allow background buffers w/out writing
 
 set nowrap                          " don't wrap lines
-set cursorline                      " highlight current line
-set colorcolumn=115                 " show a right margin column
 
 set list                            " show hidden characters
 set listchars=tab:\ \ ,trail:·      " show · for trailing space, \ \ for trailing tab
@@ -63,8 +61,10 @@ if has("gui_running")
    au GUIEnter * set vb t_vb=       " disable visual bell in gui
    set guioptions-=T                " remove gui toolbar
    set guioptions-=m                " remove gui menubar
-   set linespace=5                  " space between lines
+   set linespace=2                  " space between lines
    set columns=160 lines=30         " window size
+   set cursorline                   " highlight current line
+   set colorcolumn=115              " show a right margin column
 
    set guioptions+=LlRrb            " crazy hack to get gvim to remove all scrollbars
    set guioptions-=LlRrb
@@ -180,6 +180,7 @@ vmap <C-Down> ]egv
 
 " Command-T
 let g:CommandTMaxHeight=20
+let g:CommandTCancelMap=['<ESC>','<C-c>']
 
 " Ack
 set grepprg=ack
