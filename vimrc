@@ -62,8 +62,8 @@ if has("gui_running")
    set guioptions-=T                " remove gui toolbar
    set guioptions-=m                " remove gui menubar
    set linespace=2                  " space between lines
-   set columns=160 lines=30         " window size
-   set cursorline                   " highlight current line
+   set columns=160 lines=35         " window size
+   set cursorline                  " highlight current line
    set colorcolumn=115              " show a right margin column
 
    set guioptions+=LlRrb            " crazy hack to get gvim to remove all scrollbars
@@ -71,7 +71,7 @@ if has("gui_running")
 
    set guifont=Ubuntu\ Mono\ 12    " gui font
    set background=dark
-   colorscheme molokai             " gui theme
+   colorscheme jellybeans          " gui theme
 endif
 
 " FOLDING

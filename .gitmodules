@@ -76,3 +76,6 @@
 [submodule "bundle/irblack-grekko"]
 	path = bundle/irblack-grekko
 	url = https://github.com/grekko/vim-irblack-grekko.git
+[submodule "bundle/pasta"]
+	path = bundle/pasta
+	url = https://github.com/sickill/vim-pasta.git
