@@ -201,39 +201,4 @@ au FileType python set noexpandtab
 au BufRead,BufNewFile *.json set ft=javascript
 
 "" STATUS LINE
-
-set laststatus=2 " always hide the statusline
-set statusline= " clear the statusline for when vimrc is reloaded
-set statusline+=%-2.2n\  " buffer number
-set statusline+=%f\  " tail of the filename
-
-set statusline+=%h "help file flag
-set statusline+=%y\  "filetype
-set statusline+=%r "read only flag
-set statusline+=%m  "modified flag
-
-" display the filesize
-set statusline+=[%{FileSize()}]
-set statusline+=\ 
-" display current git branch
-set statusline+=%{fugitive#statusline()}
-set statusline+=\ 
-
-set statusline+=%=  "left/right separator
-
-set statusline+=%c, " cursor column
-set statusline+=%l/%L " cursor line/total lines
-set statusline+=\ %P\  " percent through file
-set laststatus=2  " always show status line
-
-function! FileSize()
-    let bytes = getfsize(expand("%:p"))
-    if bytes <= 0
-        return ""
-    endif
-    if bytes < 1024
-        return bytes . " Bytes"
-    else
-        return (bytes / 1024) . "kB"
-    endif
-endfunction
+set laststatus=2 " always hide the last status
