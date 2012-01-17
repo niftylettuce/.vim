@@ -38,9 +38,9 @@ set nobackup                        " prevent backups of files, since using vcs
 set nowritebackup
 set noswapfile
 
-set shiftwidth=3                    " set tab width
-set softtabstop=3
-set tabstop=3
+set shiftwidth=2                    " set tab width
+set softtabstop=2
+set tabstop=2
 
 set smarttab
 set expandtab                       " use spaces, not tabs
