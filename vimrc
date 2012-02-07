@@ -234,3 +234,10 @@ endfunction
 
 noremap <silent> <c-j> :call <SID>swap_up()<CR>
 noremap <silent> <c-k> :call <SID>swap_down()<CR>
+
+" Auto remove trailing whitespaces on buffer
+autocmd BufWritePre *.js :%s/\s\+$//e
+
+" Xclip to copy between vim and clipboard
+vmap <leader>c y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
+nmap <leader>v :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
