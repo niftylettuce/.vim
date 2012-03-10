@@ -243,4 +243,4 @@ vmap <leader>c y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:
 nmap <leader>v :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
 
 " Syntastic
-let g:syntastic_check_on_open=1
+"let g:syntastic_check_on_open=1
