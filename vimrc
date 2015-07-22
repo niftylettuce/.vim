@@ -239,11 +239,21 @@ noremap <silent> <c-k> :call <SID>swap_down()<CR>
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Xclip to copy between vim and clipboard
-vmap <leader>c y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
-nmap <leader>v :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
+if has("unix")
+  let s:uname = system("uname")
+  if s:uname == "Darwin\n"
+    vmap <leader>c y:call system("pbcopy", getreg("\""))<CR>:call system("pbcopy", getreg("\""))<CR>
+    nmap <leader>v :call setreg("\"",system("pbpaste"))<CR>p
+  else
+    vmap <leader>c y:call system("xclip -i -selection clipboard", getreg("\""))<CR>:call system("xclip -i", getreg("\""))<CR>
+    nmap <leader>v :call setreg("\"",system("xclip -o -selection clipboard"))<CR>p
+  endif
+endif
 
 " Syntastic
 "let g:syntastic_check_on_open=1
+let g:syntastic_html_tidy_ignore_errors = [ '<html> proprietary attribute "class"' ]
+let g:syntastic_javascript_checkers = [ 'eslint' ]
 
 " remove hit-enter
 :silent !ls
