@@ -251,9 +251,13 @@ if has("unix")
 endif
 
 " Syntastic
-"let g:syntastic_check_on_open=1
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_html_tidy_ignore_errors = [ '<html> proprietary attribute "class"' ]
-let g:syntastic_javascript_checkers = [ 'eslint' ]
+let g:syntastic_html_tidy_ignore_errors = [ '<script> proprietary attribute "class"' ]
 
 " remove hit-enter
 :silent !ls
+
+" json support
+au BufRead,BufNewFile *.json set filetype=json
+let g:syntastic_json_checkers=['jsonlint']
