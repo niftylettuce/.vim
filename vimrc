@@ -252,8 +252,8 @@ endif
 
 " Syntastic
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_html_tidy_ignore_errors = [ '<html> proprietary attribute "class"' ]
-let g:syntastic_html_tidy_ignore_errors = [ '<script> proprietary attribute "class"' ]
+"let g:syntastic_html_tidy_ignore_errors = [ '<html> proprietary attribute "class"', '<script> proprietary attribute "class"', '<link> proprietary attribute "sizes"', '<link> proprietary attribute "color"' ]
+let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 " remove hit-enter
 :silent !ls
@@ -261,3 +261,35 @@ let g:syntastic_html_tidy_ignore_errors = [ '<script> proprietary attribute "cla
 " json support
 au BufRead,BufNewFile *.json set filetype=json
 let g:syntastic_json_checkers=['jsonlint']
+
+" md extension for markdown
+au BufNewFile,BufRead *.md setf markdown
+
+" flow type checking
+let g:flow#enable = 1
+
+
+" thx to @dsibiski
+let g:EasyMotion_do_mapping = 0 " Disable default mappings
+
+" Bi-directional find motion
+" Jump to anywhere you want with minimal keystrokes, with just one key binding.
+" `s{char}{label}`
+nmap s <Plug>(easymotion-s)
+" or
+" `s{char}{char}{label}`
+" Need one more keystroke, but on average, it may be more comfortable.
+nmap s <Plug>(easymotion-s2)
+
+" Turn on case insensitive feature
+let g:EasyMotion_smartcase = 1
+
+" JK motions: Line motions
+map <Leader>j <Plug>(easymotion-j)
+map <Leader>k <Plug>(easymotion-k)
+
+" Die arrow keys!
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
