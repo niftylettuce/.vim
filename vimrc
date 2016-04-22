@@ -266,7 +266,7 @@ let g:syntastic_json_checkers=['jsonlint']
 au BufNewFile,BufRead *.md setf markdown
 
 " flow type checking
-let g:flow#enable = 1
+let g:flow#enable = 0
 
 
 " thx to @dsibiski
@@ -289,7 +289,21 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 " Die arrow keys!
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+"nnoremap <Left> :echoe "Use h"<CR>
+"nnoremap <Right> :echoe "Use l"<CR>
+"nnoremap <Up> :echoe "Use k"<CR>
+"nnoremap <Down> :echoe "Use j"<CR>
+
+" Highlight the 80th column
+" http://stackoverflow.com/a/3787678
+:set colorcolumn=80
+
+" Force detection of markdown with .md files so it doens't do Modula-2
+" https://github.com/tpope/vim-markdown
+"autocmd BufRead,BufReadPost *.md set filetype=markdown
+
+" Load the instant-markdown file
+"source $HOME/.vim/vim-instant-markdown/after/ftplugin/markdown/instant-markdown.vim
+
+" If I don't put this here then it opens everytime
+"let g:instant_markdown_autostart = 0
