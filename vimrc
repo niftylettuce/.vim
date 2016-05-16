@@ -2,8 +2,9 @@ set nocompatible                    " full vim
 syntax enable                       " enable syntax highlighting
 set encoding=utf8                   " utf8 default encoding
 
-call pathogen#infect()              " load pathogen
-filetype plugin on
+" load pathogen
+execute pathogen#infect()
+syntax on
 filetype plugin indent on
 
 noremap , \
