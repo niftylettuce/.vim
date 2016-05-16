@@ -90,4 +90,16 @@
 	url = https://github.com/groenewege/vim-less.git
 [submodule "vim-instant-markdown"]
 	path = vim-instant-markdown
-	url = https://github.com/suan/vim-instant-markdown.git
+  url = https://github.com/suan/vim-instant-markdown.git
+[submodule "bundle/vim-easymotion"]
+  path = bundle/vim-easymotion
+  url = https://github.com/easymotion/vim-easymotion.git
+[submodule "bundle/vim-flow"]
+  path = bundle/vim-flow
+  url = https://github.com/flowtype/vim-flow.git
+[submodule "syntastic-local-eslint.vim"]
+  path = syntastic-local-eslint
+  url = https://github.com/mtscout6/syntastic-local-eslint.vim.git
+[submodule "bundle/vim-jinja"]
+	path = bundle/vim-jinja
+	url = https://github.com/niftylettuce/vim-jinja.git

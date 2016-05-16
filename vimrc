@@ -3,6 +3,7 @@ syntax enable                       " enable syntax highlighting
 set encoding=utf8                   " utf8 default encoding
 
 call pathogen#infect()              " load pathogen
+filetype plugin on
 filetype plugin indent on
 
 noremap , \
@@ -251,6 +252,15 @@ if has("unix")
 endif
 
 " Syntastic
+" Load the syntastic-local-eslint file
+"source $HOME/.vim/syntastic-local-eslint/ftplugin/javascript.vim
+let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
+if matchstr(local_eslint, "^\/\\w") == ''
+    let local_eslint = getcwd() . "/" . local_eslint
+endif
+if executable(local_eslint)
+    let g:syntastic_javascript_eslint_exec = local_eslint
+endif
 let g:syntastic_javascript_checkers = ['eslint']
 "let g:syntastic_html_tidy_ignore_errors = [ '<html> proprietary attribute "class"', '<script> proprietary attribute "class"', '<link> proprietary attribute "sizes"', '<link> proprietary attribute "color"' ]
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
@@ -262,12 +272,8 @@ let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 au BufRead,BufNewFile *.json set filetype=json
 let g:syntastic_json_checkers=['jsonlint']
 
-" md extension for markdown
-au BufNewFile,BufRead *.md setf markdown
-
 " flow type checking
 let g:flow#enable = 0
-
 
 " thx to @dsibiski
 let g:EasyMotion_do_mapping = 0 " Disable default mappings
@@ -300,10 +306,17 @@ map <Leader>k <Plug>(easymotion-k)
 
 " Force detection of markdown with .md files so it doens't do Modula-2
 " https://github.com/tpope/vim-markdown
-"autocmd BufRead,BufReadPost *.md set filetype=markdown
+" http://stackoverflow.com/a/11995366
+" md extension for markdown
+au BufNewFile,BufRead *.md set ft=markdown
 
-" Load the instant-markdown file
-"source $HOME/.vim/vim-instant-markdown/after/ftplugin/markdown/instant-markdown.vim
+
+" Old stuff:
+"au BufNewFile,BufReadPost,BufRead *.njk setf jinja
+"au BufNewFile,BufReadPost,BufRead *.md setf markdown
 
 " If I don't put this here then it opens everytime
-"let g:instant_markdown_autostart = 0
+let g:instant_markdown_autostart = 0
+
+" Load the instant-markdown file
+source $HOME/.vim/vim-instant-markdown/after/ftplugin/markdown/instant-markdown.vim
