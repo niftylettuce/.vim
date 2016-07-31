@@ -311,13 +311,9 @@ map <Leader>k <Plug>(easymotion-k)
 " md extension for markdown
 au BufNewFile,BufRead *.md set ft=markdown
 
+" Toggle live markdown preview with `gm`
+nmap gm :LivedownToggle<CR>
 
-" Old stuff:
-"au BufNewFile,BufReadPost,BufRead *.njk setf jinja
-"au BufNewFile,BufReadPost,BufRead *.md setf markdown
-
-" If I don't put this here then it opens everytime
-let g:instant_markdown_autostart = 0
-
-" Load the instant-markdown file
-source $HOME/.vim/vim-instant-markdown/after/ftplugin/markdown/instant-markdown.vim
+" Allow JSX in any .js file
+" https://github.com/mxw/vim-jsx
+let g:jsx_ext_required = 0

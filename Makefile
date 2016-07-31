@@ -7,14 +7,7 @@ install:
 	@ln -s ${vim}/vimrc ~/.vimrc
 	@git submodule update --init
 	@make -s command-t
-	#@mkdir ftdetect/
-	#@mkdir indent/
-	#@mkdir syntax/
-	#@mkdir ftplugin/
-	#@ln -s Vim-Jinja2-Syntax/ftdetect/jinja.vim ftdetect/jinja.vim
-	#@ln -s Vim-Jinja2-Syntax/indent/jinja.vim indent/jinja.vim
-	#@ln -s Vim-Jinja2-Syntax/syntax/jinja.vim syntax/jinja.vim
-	#@ln -s Vim-Jinja2-Syntax/ftplugin/jinja.vim ftplugin/jinja.vim
+	@make -s pathogen
 
 update:
 	@git submodule foreach git pull
@@ -25,4 +18,5 @@ command-t:
 	@cd ${vim}/bundle/command-t && rake clean && rake make
 
 pathogen:
-	@cd ${vim}/autoload && rm pathogen.vim && curl -O https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+	@mkdir -p ~/.vim/autoload ~/.vim/bundle
+	@curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
