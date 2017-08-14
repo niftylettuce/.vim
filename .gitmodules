@@ -88,9 +88,6 @@
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = https://github.com/groenewege/vim-less.git
-[submodule "vim-instant-markdown"]
-	path = vim-instant-markdown
-  url = https://github.com/suan/vim-instant-markdown.git
 [submodule "bundle/vim-easymotion"]
   path = bundle/vim-easymotion
   url = https://github.com/easymotion/vim-easymotion.git
@@ -108,4 +105,7 @@
 	url = https://github.com/shime/vim-livedown.git
 [submodule "bundle/vim-jsx"]
 	path = bundle/vim-jsx
-	url = https://github.com/mxw/vim-jsx.git
+  url = https://github.com/mxw/vim-jsx.git
+[submodule "bundle/vim-dispatch"]
+  path = bundle/vim-dispatch
+  url = https://github.com/tpope/vim-dispatch.git

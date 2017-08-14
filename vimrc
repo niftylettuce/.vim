@@ -60,20 +60,20 @@ set t_Co=256                        " use 256 colors
 set background=dark
 colorscheme ir_black                " terminal theme
 if has("gui_running")
-   au GUIEnter * set vb t_vb=       " disable visual bell in gui
-   set guioptions-=T                " remove gui toolbar
-   set guioptions-=m                " remove gui menubar
-   set linespace=2                  " space between lines
-   set columns=160 lines=35         " window size
-   set cursorline                  " highlight current line
-   set colorcolumn=115              " show a right margin column
+  au GUIEnter * set vb t_vb=       " disable visual bell in gui
+  set guioptions-=T                " remove gui toolbar
+  set guioptions-=m                " remove gui menubar
+  set linespace=2                  " space between lines
+  set columns=160 lines=35         " window size
+  set cursorline                  " highlight current line
+  set colorcolumn=115              " show a right margin column
 
-   set guioptions+=LlRrb            " crazy hack to get gvim to remove all scrollbars
-   set guioptions-=LlRrb
+  set guioptions+=LlRrb            " crazy hack to get gvim to remove all scrollbars
+  set guioptions-=LlRrb
 
-   set guifont=Ubuntu\ Mono\ 12    " gui font
-   set background=dark
-   colorscheme jellybeans          " gui theme
+  set guifont=Ubuntu\ Mono\ 12    " gui font
+  set background=dark
+  colorscheme jellybeans          " gui theme
 endif
 
 " FOLDING
@@ -208,30 +208,30 @@ set laststatus=2 " always hide the last status
 " Swap Lines
 " http://stackoverflow.com/questions/741814/move-entire-line-up-and-down-in-vim
 function! s:swap_lines(n1, n2)
-    let line1 = getline(a:n1)
-    let line2 = getline(a:n2)
-    call setline(a:n1, line2)
-    call setline(a:n2, line1)
+  let line1 = getline(a:n1)
+  let line2 = getline(a:n2)
+  call setline(a:n1, line2)
+  call setline(a:n2, line1)
 endfunction
 
 function! s:swap_up()
-    let n = line('.')
-    if n == 1
-      return
-    endif
+  let n = line('.')
+  if n == 1
+    return
+  endif
 
-    call s:swap_lines(n, n - 1)
-    exec n - 1
+  call s:swap_lines(n, n - 1)
+  exec n - 1
 endfunction
 
 function! s:swap_down()
-    let n = line('.')
-    if n == line('$')
-        return
-    endif
+  let n = line('.')
+  if n == line('$')
+    return
+  endif
 
-    call s:swap_lines(n, n + 1)
-    exec n +1
+  call s:swap_lines(n, n + 1)
+  exec n +1
 endfunction
 
 noremap <silent> <c-j> :call <SID>swap_up()<CR>
@@ -253,16 +253,19 @@ if has("unix")
 endif
 
 " Syntastic
+" https://github.com/sindresorhus/vim-xo
+let g:syntastic_javascript_checkers = ['xo']
+
 " Load the syntastic-local-eslint file
 "source $HOME/.vim/syntastic-local-eslint/ftplugin/javascript.vim
-let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
-if matchstr(local_eslint, "^\/\\w") == ''
-    let local_eslint = getcwd() . "/" . local_eslint
-endif
-if executable(local_eslint)
-    let g:syntastic_javascript_eslint_exec = local_eslint
-endif
-let g:syntastic_javascript_checkers = ['eslint']
+" let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
+" if matchstr(local_eslint, "^\/\\w") == ''
+"   let local_eslint = getcwd() . "/" . local_eslint
+" endif
+" if executable(local_eslint)
+"   let g:syntastic_javascript_eslint_exec = local_eslint
+" endif
+" let g:syntastic_javascript_checkers = ['eslint']
 "let g:syntastic_html_tidy_ignore_errors = [ '<html> proprietary attribute "class"', '<script> proprietary attribute "class"', '<link> proprietary attribute "sizes"', '<link> proprietary attribute "color"' ]
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
@@ -303,6 +306,7 @@ map <Leader>k <Plug>(easymotion-k)
 
 " Highlight the 80th column
 " http://stackoverflow.com/a/3787678
+:highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 :set colorcolumn=80
 
 " Force detection of markdown with .md files so it doens't do Modula-2
@@ -313,7 +317,26 @@ au BufNewFile,BufRead *.md set ft=markdown
 
 " Toggle live markdown preview with `gm`
 nmap gm :LivedownToggle<CR>
+" use port 8337 instead of 1337 since tunnelblick uses that port
+let g:livedown_port = 8337
 
 " Allow JSX in any .js file
 " https://github.com/mxw/vim-jsx
 let g:jsx_ext_required = 0
+
+" vim-prettier
+" https://github.com/prettier/vim-prettier
+" needs to run before save otherwise conflicts with vim-autoformatter
+let g:prettier#autoformat = 0
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#trailing_comma = 'none'
+autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
+
+" vim-autoformatter
+" https://github.com/Chiel92/vim-autoformat
+"let g:formatdef_xo_javascript = '"node_modules/.bin/xo --fix --stdin"'
+"let g:autoformat_verbosemode = 1
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+au BufWrite * :Autoformat
