@@ -253,6 +253,17 @@ if has("unix")
 endif
 
 " Syntastic
+
+" https://github.com/vim-syntastic/syntastic/issues/1640
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " https://github.com/sindresorhus/vim-xo
 let g:syntastic_javascript_checkers = ['xo']
 
@@ -334,9 +345,9 @@ autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
 
 " vim-autoformatter
 " https://github.com/Chiel92/vim-autoformat
-"let g:formatdef_xo_javascript = '"node_modules/.bin/xo --fix --stdin"'
+"let verbose=1
 "let g:autoformat_verbosemode = 1
-let g:autoformat_autoindent = 0
-let g:autoformat_retab = 0
-let g:autoformat_remove_trailing_spaces = 0
-au BufWrite * :Autoformat
+"let g:autoformat_autoindent = 0
+"let g:autoformat_retab = 0
+"let g:autoformat_remove_trailing_spaces = 0
+"au BufWrite * :Autoformat
