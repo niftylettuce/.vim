@@ -109,3 +109,15 @@
 [submodule "bundle/vim-dispatch"]
   path = bundle/vim-dispatch
   url = https://github.com/tpope/vim-dispatch.git
+[submodule "bundle/vim-autoformat"]
+  path = bundle/vim-autoformat
+  url = https://github.com/Chiel92/vim-autoformat.git
+[submodule "bundle/vim-prettier"]
+  path = bundle/vim-prettier
+  url = https://github.com/prettier/vim-prettier.git
+[submodule "bundle/vim-xo"]
+  path = bundle/vim-xo
+  url = https://github.com/sindresorhus/vim-xo.git
+[submodule "bundle/editorconfig-vim"]
+  path = bundle/editorconfig-vim
+  url = https://github.com/editorconfig/editorconfig-vim.git
