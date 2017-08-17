@@ -1,3 +1,7 @@
+" allow project specific vim configurations
+" https://andrew.stwrt.ca/posts/project-specific-vimrc/
+set exrc
+
 set nocompatible                    " full vim
 syntax enable                       " enable syntax highlighting
 set encoding=utf8                   " utf8 default encoding
@@ -202,8 +206,6 @@ au FileType python set noexpandtab
 " JavaScript
 au BufRead,BufNewFile *.json set ft=javascript
 
-"" STATUS LINE
-set laststatus=2 " always hide the last status
 
 " Swap Lines
 " http://stackoverflow.com/questions/741814/move-entire-line-up-and-down-in-vim
@@ -255,9 +257,14 @@ endif
 " Syntastic
 
 " https://github.com/vim-syntastic/syntastic/issues/1640
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"set statusline+=%F
+set laststatus=2 " always hide the last status
+
+" https://github.com/pugjs/pug-lint
+let g:syntastic_pug_checkers = ['pug_lint']
 
 let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
@@ -351,3 +358,7 @@ autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
 "let g:autoformat_retab = 0
 "let g:autoformat_remove_trailing_spaces = 0
 "au BufWrite * :Autoformat
+
+" disable unsafe commands in project specific vimrc files
+" https://andrew.stwrt.ca/posts/project-specific-vimrc/
+set secure
