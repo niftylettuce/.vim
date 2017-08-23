@@ -1,7 +1,3 @@
-" allow project specific vim configurations
-" https://andrew.stwrt.ca/posts/project-specific-vimrc/
-set exrc
-
 set nocompatible                    " full vim
 syntax enable                       " enable syntax highlighting
 set encoding=utf8                   " utf8 default encoding
@@ -271,28 +267,13 @@ let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-" https://github.com/sindresorhus/vim-xo
-let g:syntastic_javascript_checkers = ['xo']
+" https://github.com/mantoni/eslint_d.js
+let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
-" Load the syntastic-local-eslint file
-"source $HOME/.vim/syntastic-local-eslint/ftplugin/javascript.vim
-" let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
-" if matchstr(local_eslint, "^\/\\w") == ''
-"   let local_eslint = getcwd() . "/" . local_eslint
-" endif
-" if executable(local_eslint)
-"   let g:syntastic_javascript_eslint_exec = local_eslint
-" endif
-" let g:syntastic_javascript_checkers = ['eslint']
-"let g:syntastic_html_tidy_ignore_errors = [ '<html> proprietary attribute "class"', '<script> proprietary attribute "class"', '<link> proprietary attribute "sizes"', '<link> proprietary attribute "color"' ]
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 " remove hit-enter
 :silent !ls
-
-" json support
-au BufRead,BufNewFile *.json set filetype=json
-let g:syntastic_json_checkers=['jsonlint']
 
 " flow type checking
 let g:flow#enable = 0
@@ -344,20 +325,17 @@ let g:jsx_ext_required = 0
 
 " vim-prettier
 " https://github.com/prettier/vim-prettier
-" needs to run before save otherwise conflicts with vim-autoformatter
 let g:prettier#autoformat = 0
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#trailing_comma = 'none'
-autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
 
 " vim-autoformatter
 " https://github.com/Chiel92/vim-autoformat
-"let verbose=1
-"let g:autoformat_verbosemode = 1
-"let g:autoformat_autoindent = 0
-"let g:autoformat_retab = 0
-"let g:autoformat_remove_trailing_spaces = 0
-"au BufWrite * :Autoformat
+let g:autoformat_autoindent = 0
+let g:autoformat_retab = 0
+let g:autoformat_remove_trailing_spaces = 0
+au BufWrite * :Autoformat
+
+" Load local project directory settings
+silent! so .vimlocal
 
 " disable unsafe commands in project specific vimrc files
 " https://andrew.stwrt.ca/posts/project-specific-vimrc/
