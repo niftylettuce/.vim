@@ -270,6 +270,11 @@ let g:syntastic_check_on_wq = 0
 " https://github.com/mantoni/eslint_d.js
 let g:syntastic_javascript_eslint_exec = 'eslint_d'
 
+" https://github.com/sindresorhus/vim-xo
+" `npm install -g xo`
+" (note this can be overridden e.g. with 'eslint' per project in vimlocal)
+let g:syntastic_javascript_checkers = ['xo']
+
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
 
 " remove hit-enter
