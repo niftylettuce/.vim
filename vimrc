@@ -326,44 +326,13 @@ let g:livedown_port = 8337
 
 " Allow JSX in any .js file
 " https://github.com/mxw/vim-jsx
-let g:jsx_ext_required = 0
-
-" vim-prettier
-" https://github.com/prettier/vim-prettier
-"let g:prettier#autoformat = 0
-
-" max line lengh that prettier will wrap on
-let g:prettier#config#print_width = 80
-
-" number of spaces per indentation level
-let g:prettier#config#tab_width = 2
-
-" use tabs over spaces
-let g:prettier#config#use_tabs = 'false'
-
-" print semicolons
-let g:prettier#config#semi = 'true'
-
-" single quotes over double quotes
-let g:prettier#config#single_quote = 'true'
-
-" print spaces between brackets
-let g:prettier#config#bracket_spacing = 'false'
-
-" put > on the last line instead of new line
-let g:prettier#config#jsx_bracket_same_line = 'true'
-
-" none|es5|all
-let g:prettier#config#trailing_comma = 'none'
-
-autocmd BufWritePre *.js,*.json,*.css,*.scss,*.less,*.graphql Prettier
+" let g:jsx_ext_required = 0
 
 " vim-autoformatter
 " https://github.com/Chiel92/vim-autoformat
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
-au BufWrite * :Autoformat
 
 " Load local project directory settings
 silent! so .vimlocal

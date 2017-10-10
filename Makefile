@@ -3,7 +3,6 @@ all:update
 
 install:
 	@mv ~/.vimrc ~/.vimrc_bak || echo "There was no existing .vimrc, so no need to backup"
-	@mv ~/.gvimrc ~/.gvimrc_bak || echo "There was no existing .gvimrc, so no need to backup"
 	@ln -s ${vim}/vimrc ~/.vimrc
 	@git submodule update --init
 	@make -s command-t
