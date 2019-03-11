@@ -49,6 +49,7 @@ set expandtab                       " use spaces, not tabs
 set autoindent                      " set automatic code indentation
 set hidden                          " allow background buffers w/out writing
 
+"set wrap
 set nowrap                          " don't wrap lines
 
 set list                            " show hidden characters
@@ -135,7 +136,7 @@ vmap < <gv
 nmap <leader>r :%s#\<<C-r>=expand("<cword>")<CR>\>#
 
 " strip all trailing whitespace in the current file
-nnoremap <leader>W :%s/\s\+$//e<cr>:let @/=''<CR>
+" nnoremap <leader>W :%s/\s\+$//e<cr>:let @/=''<CR>
 
 " insert path of current file into a command
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
@@ -236,7 +237,7 @@ noremap <silent> <c-j> :call <SID>swap_up()<CR>
 noremap <silent> <c-k> :call <SID>swap_down()<CR>
 
 " Auto remove trailing whitespaces on buffer
-autocmd BufWritePre * :%s/\s\+$//e
+" autocmd BufWritePre * :%s/\s\+$//e
 
 " Xclip to copy between vim and clipboard
 if has("unix")
@@ -333,6 +334,11 @@ let g:livedown_port = 8337
 let g:autoformat_autoindent = 0
 let g:autoformat_retab = 0
 let g:autoformat_remove_trailing_spaces = 0
+let g:formatters_javascript = [ 'xo_javascript' ]
+
+" vim-better-whitespace
+let g:better_whitespace_enabled = 1
+let g:strip_whitespace_on_save = 1
 
 " Load local project directory settings
 silent! so .vimlocal
