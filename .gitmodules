@@ -112,6 +112,9 @@
 [submodule "bundle/editorconfig-vim"]
   path = bundle/editorconfig-vim
   url = https://github.com/editorconfig/editorconfig-vim.git
+[submodule "bundle/vim-fetch"]
+	path = bundle/vim-fetch
+  url = https://github.com/wsdjeg/vim-fetch.git
 [submodule "bundle/vim-better-whitespace"]
-  path = bundle/vim-better-whitespace
-  url = https://github.com/ntpeters/vim-better-whitespace.git
+	path = bundle/vim-better-whitespace
+	url = https://github.com/ntpeters/vim-better-whitespace.git
