@@ -60,6 +60,7 @@ set noeb vb t_vb=                   " disable audio and visual bells
 set t_Co=256                        " use 256 colors
 set background=dark
 colorscheme ir_black                " terminal theme
+" colorscheme snazzy                " terminal theme
 if has("gui_running")
   au GUIEnter * set vb t_vb=       " disable visual bell in gui
   set guioptions-=T                " remove gui toolbar
@@ -260,6 +261,9 @@ endif
 "set statusline+=%F
 set laststatus=2 " always hide the last status
 
+" https://yamllint.readthedocs.io/en/stable/text_editors.html#vim
+let g:syntastic_yaml_checkers = ['yamllint']
+
 " https://github.com/pugjs/pug-lint
 let g:syntastic_pug_checkers = ['pug_lint']
 
@@ -311,8 +315,8 @@ map <Leader>k <Plug>(easymotion-k)
 
 " Highlight the 80th column
 " http://stackoverflow.com/a/3787678
-:highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
-:set colorcolumn=80
+" :highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
+" :set colorcolumn=80
 
 " Force detection of markdown with .md files so it doens't do Modula-2
 " https://github.com/tpope/vim-markdown

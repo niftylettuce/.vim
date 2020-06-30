@@ -67,9 +67,6 @@
 [submodule "bundle/nerdtree-execute"]
 	path = bundle/nerdtree-execute
 	url = https://github.com/ivalkeen/nerdtree-execute
-[submodule "bundle/irblack-grekko"]
-	path = bundle/irblack-grekko
-	url = https://github.com/grekko/vim-irblack-grekko.git
 [submodule "bundle/pasta"]
 	path = bundle/pasta
 	url = https://github.com/sickill/vim-pasta.git
@@ -118,3 +115,12 @@
 [submodule "bundle/vim-better-whitespace"]
 	path = bundle/vim-better-whitespace
 	url = https://github.com/ntpeters/vim-better-whitespace.git
+[submodule "vim-vagrant"]
+	path = bundle/vim-vagrant
+	url = https://github.com/hashivim/vim-vagrant.git
+[submodule "vim-snazzy"]
+	path = bundle/vim-snazzy
+	url = https://github.com/connorholyday/vim-snazzy
+[submodule "bundle/vim-irblack"]
+	path = bundle/vim-irblack
+	url = https://github.com/niftylettuce/vim-irblack.git
