@@ -124,3 +124,6 @@
 [submodule "bundle/vim-irblack"]
 	path = bundle/vim-irblack
 	url = https://github.com/niftylettuce/vim-irblack.git
+[submodule "bundle/vim-vagrant"]
+	path = bundle/vim-vagrant
+	url = https://github.com/hashivim/vim-vagrant.git
