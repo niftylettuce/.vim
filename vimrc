@@ -3,6 +3,7 @@ syntax enable                       " enable syntax highlighting
 set encoding=utf8                   " utf8 default encoding
 
 " load pathogen
+set nocp
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -260,6 +261,10 @@ endif
 "set statusline+=%*
 "set statusline+=%F
 set laststatus=2 " always hide the last status
+
+" https://stackoverflow.com/a/51522537
+let g:syntastic_python_python_exec = 'python3'
+let g:syntastic_python_checkers = ['python']
 
 " https://yamllint.readthedocs.io/en/stable/text_editors.html#vim
 let g:syntastic_yaml_checkers = ['yamllint']
